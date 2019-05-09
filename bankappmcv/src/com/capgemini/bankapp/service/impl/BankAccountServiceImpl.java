@@ -1,0 +1,79 @@
+package com.capgemini.bankapp.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.capgemini.bankapp.dao.BankAccountDao;
+import com.capgemini.bankapp.exception.BankAccountNotFoundException;
+import com.capgemini.bankapp.exception.LowBalanceException;
+import com.capgemini.bankapp.model.BankAccount;
+import com.capgemini.bankapp.service.BankAccountService;
+
+@Service
+public class BankAccountServiceImpl implements BankAccountService{
+
+	@Autowired
+	private BankAccountDao bankAccountDao;
+	
+	public BankAccountServiceImpl( BankAccountDao bankAccountDao) {
+		this.bankAccountDao = bankAccountDao;
+	}
+	
+	@Override
+	public double checkBalance(long accountId) throws BankAccountNotFoundException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double withdraw(long accountId, double amount) throws LowBalanceException, BankAccountNotFoundException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double deposit(long accountId, double amount) throws BankAccountNotFoundException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean deleteBankAccount(long accountId) throws BankAccountNotFoundException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public double fundTransfer(long fromAccount, long toAccount, double amount)
+			throws LowBalanceException, BankAccountNotFoundException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean addNewBankAccount(BankAccount account) {
+		boolean result = bankAccountDao.addNewBankAccount(account);
+		return result;
+	}
+
+	@Override
+	public List<BankAccount> findAllBankAccount() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BankAccount searchCustomerRecord(long accountId) throws BankAccountNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updateBankAccountDetails(long accountId, String accountHolderName, String accountType) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
